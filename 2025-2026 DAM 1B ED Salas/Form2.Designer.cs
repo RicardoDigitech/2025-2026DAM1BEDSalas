@@ -35,7 +35,7 @@
             this.lblTotales = new System.Windows.Forms.Label();
             this.btnVender = new System.Windows.Forms.Button();
             this.btnVaciar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbSala = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +91,7 @@
             this.btnVender.TabIndex = 5;
             this.btnVender.Text = "VENDER ENTRADA";
             this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // btnVaciar
             // 
@@ -100,21 +101,23 @@
             this.btnVaciar.TabIndex = 6;
             this.btnVaciar.Text = "VACIAR SALA";
             this.btnVaciar.UseVisualStyleBackColor = true;
+            this.btnVaciar.Click += new System.EventHandler(this.btnVaciar_Click);
             // 
-            // comboBox1
+            // cbSala
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(715, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbSala.FormattingEnabled = true;
+            this.cbSala.Location = new System.Drawing.Point(73, 12);
+            this.cbSala.Name = "cbSala";
+            this.cbSala.Size = new System.Drawing.Size(715, 21);
+            this.cbSala.TabIndex = 7;
+            this.cbSala.SelectedIndexChanged += new System.EventHandler(this.cbSala_SelectedIndexChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 111);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbSala);
             this.Controls.Add(this.btnVaciar);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.lblTotales);
@@ -138,6 +141,6 @@
         private System.Windows.Forms.Label lblTotales;
         private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Button btnVaciar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbSala;
     }
 }

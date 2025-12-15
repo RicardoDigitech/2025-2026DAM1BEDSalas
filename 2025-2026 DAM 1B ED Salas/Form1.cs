@@ -12,9 +12,22 @@ namespace _2025_2026_DAM_1B_ED_Salas
 {
     public partial class Form1 : Form
     {
+        private SalaModel[] salaArray;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public Form1(SalaModel[] salaArray)
+        {
+            InitializeComponent();
+            this.salaArray = salaArray;
+
+            for (int i = 0; i < salaArray.Length; i++)
+            {
+                cbSala.Items.Add("Sala " + (i + 1));
+            }
         }
 
         private void btnTerminado_Click(object sender, EventArgs e)
@@ -24,6 +37,7 @@ namespace _2025_2026_DAM_1B_ED_Salas
             int ocupadas;
             float entrada;
             SalaModel miSala;
+            int posicion;
 
             pelicula = txtPelicula.Text;
             aforo = (int)nudAforo.Value;
@@ -48,7 +62,17 @@ namespace _2025_2026_DAM_1B_ED_Salas
             miSala = new SalaModel(
                 pelicula, aforo, ocupadas, entrada
                 );
-            limpiar();
+
+            posicion = cbSala.SelectedIndex;
+            if (posicion != -1)
+            {
+                salaArray[posicion] = miSala;
+                limpiar();
+            }
+            else
+            {
+                MessageBox.Show("ERES TONTO");
+            }
         }
 
         private void limpiar()
